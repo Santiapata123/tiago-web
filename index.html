@@ -95,40 +95,43 @@ nav a:hover {
 .hero {
     height: 100vh;
     min-height: 650px;
+
     display: flex;
     align-items: flex-end;
-    padding: 0 7% 9%;
-    position: relative;
-    overflow: hidden;
 
-    /* Capa doble: Un gradiente oscuro fuerte para legibilidad + la imagen de fondo de la cámara/fotógrafo */
+    padding: 0 7% 9%;
+
     background:
         linear-gradient(
             to top,
-            rgba(8,8,8, 0.95) 20%,
-            rgba(8,8,8, 0.6) 70%,
-            rgba(8,8,8, 0.4) 100%
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.1)
         ),
-        url("images/camara-hero.jpg"); /* Reemplaza con la ruta de tu imagen de cámara/fotógrafo */
+        url("images/portada.jpg");
 
     background-size: cover;
     background-position: center;
 }
 
-/* Opcional: Un pequeño filtro extra si querés que la imagen de fondo esté más difuminada o en escala de grises */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    backdrop-filter: blur(2px); /* Difumina ligeramente la imagen de fondo si tiene mucho detalle */
-    z-index: 1;
-    pointer-events: none;
+.small-title {
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    color: #ccc;
 }
 
-/* Aseguramos que el contenido del hero esté por encima del filtro */
-.hero > div {
-    position: relative;
-    z-index: 2;
+.hero h1 {
+    font-size: clamp(60px, 11vw, 150px);
+    line-height: .85;
+    letter-spacing: -7px;
+    font-weight: 900;
+}
+
+.hero p {
+    margin-top: 30px;
+    color: #ccc;
+    max-width: 500px;
+    line-height: 1.6;
 }
 
 /* =========================================
