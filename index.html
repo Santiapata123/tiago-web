@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TIAGO | Photography</title>
+
+<meta name="description" content="Fotografía deportiva, fútbol y eventos. Tiago Stanisich, capturando momentos que cuentan historias.">
+
+<meta property="og:title" content="TIAGO | Photography">
+<meta property="og:description" content="Fotografía deportiva, fútbol y eventos.">
+<meta property="og:image" content="images/portada.jpg">
+<meta property="og:type" content="website">
+
+<!-- Reemplazar por el favicon real cuando esté disponible -->
+<link rel="icon" href="images/favicon.ico">
+
+<style>
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   NAV
+========================================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(15px);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-left: 25px;
+
+    transition: .3s;
+}
+
+nav a:hover {
+    opacity: .5;
+}
+
+
+/* =========================================
+   PORTADA
+========================================= */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 0 7% 9%;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.1)
+        ),
+        url("images/portada.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 11vw, 150px);
+    line-height: .85;
+    letter-spacing: -7px;
+    font-weight: 900;
+}
+
+.hero p {
+    margin-top: 30px;
+    color: #ccc;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+section {
+    padding: 120px 6%;
+}
+
+.category-header {
+    margin-bottom: 70px;
+}
+
+.number {
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.category-title {
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: .85;
+    letter-spacing: -5px;
+}
+
+
+/* =========================================
+   TRABAJO
+========================================= */
+
+.project {
+    margin-bottom: 140px;
+}
+
+.project-info {
+    margin-bottom: 25px;
+}
+
+.project-info h3 {
+    font-size: 34px;
+    letter-spacing: -1px;
+}
+
+.project-info p {
+    margin-top: 8px;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   GRID DE 10 FOTOS
+========================================= */
+
+.photo-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    grid-auto-rows: 130px;
+
+    gap: 10px;
+}
+
+
+/* =========================================
+   CADA RECUADRO
+========================================= */
+
+.photo-box {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #151515;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   TAMAÑOS DIFERENTES
+========================================= */
+
+.photo-box:nth-child(1) {
+    grid-column: span 7;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(2) {
+    grid-column: span 5;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(3) {
+    grid-column: span 4;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(4) {
+    grid-column: span 8;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(5) {
+    grid-column: span 5;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(6) {
+    grid-column: span 7;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(7) {
+    grid-column: span 6;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(8) {
+    grid-column: span 6;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(9) {
+    grid-column: span 8;
+    grid-row: span 5;
+}
+
+.photo-box:nth-child(10) {
+    grid-column: span 4;
+    grid-row: span 5;
+}
+
+
+/* =========================================
+   IMAGEN
+========================================= */
+
+.photo-box img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        opacity .6s ease,
+        transform .8s ease;
+}
+
+.photo-box:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   FLECHAS
+========================================= */
+
+.photo-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.6);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    opacity: 0;
+
+    transition: .3s;
+}
+
+.photo-box:hover .photo-arrow {
+    opacity: 1;
+}
+
+.photo-prev {
+    left: 12px;
+}
+
+.photo-next {
+    right: 12px;
+}
+
+
+/* =========================================
+   CONTADOR
+========================================= */
+
+.photo-counter {
+
+    position: absolute;
+
+    bottom: 12px;
+
+    left: 12px;
+
+    padding: 6px 9px;
+
+    background: rgba(0,0,0,.6);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   SEPARADOR
+========================================= */
+
+.divider {
+
+    height: 1px;
+
+    background: #222;
+
+    margin: 0 6%;
+}
+
+
+/* =========================================
+   SOBRE MI
+========================================= */
+
+.about {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-image {
+
+    height: 650px;
+
+    overflow: hidden;
+}
+
+.about-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.about-text h2 {
+
+    font-size: clamp(50px, 7vw, 100px);
+
+    line-height: .85;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 35px;
+}
+
+.about-text p {
+
+    max-width: 500px;
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CONTACTO
+========================================= */
+
+.contact {
+
+    text-align: center;
+
+    padding: 180px 20px;
+
+    background: #111;
+}
+
+.contact h2 {
+
+    font-size: clamp(60px, 10vw, 140px);
+
+    letter-spacing: -7px;
+
+    line-height: .85;
+}
+
+.contact p {
+
+    color: #999;
+
+    margin: 30px auto;
+
+    max-width: 450px;
+
+    line-height: 1.7;
+}
+
+.button {
+
+    display: inline-block;
+
+    padding: 16px 35px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+
+    transition: .3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.97);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 3000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+
+    max-width: 90%;
+
+    max-height: 90vh;
+
+    object-fit: contain;
+}
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    font-size: 45px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:800px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 10px;
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .photo-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-auto-rows: 220px;
+
+        gap: 6px;
+    }
+
+    .photo-box:nth-child(n) {
+
+        grid-column: span 1;
+
+        grid-row: span 2;
+    }
+
+    .photo-arrow {
+        opacity: 1;
+    }
+
+    .about {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .about-image {
+        height: 500px;
+    }
+}
+
+@media(max-width:500px) {
+
+    nav a:nth-child(1),
+    nav a:nth-child(2) {
+        display: none;
+    }
+
+}
+
+
+/* =========================================
+   TRANSICIÓN
+========================================= */
+
+.fade {
+    opacity: 0;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAV
+========================================= -->
+
+<nav>
+
+    <div class="logo">
+        TIAGOSTANISICH PH
+    </div>
+
+    <div>
+
+        <a href="#futbol">
+            FÚTBOL
+        </a>
+
+        <a href="#eventos">
+            EVENTOS
+        </a>
+
+        <a href="#sobre-mi">
+            SOBRE MÍ
+        </a>
+
+        <a href="#contacto">
+            CONTACTO
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================
+     PORTADA
+========================================= -->
+
+<header class="hero">
+
+    <div>
+
+        <div class="small-title">
+            SPORTS & EVENT PHOTOGRAPHY
+        </div>
+
+        <h1>
+            TIAGO<br>
+            PHOTO
+        </h1>
+
+        <p>
+            Fotografía deportiva, fútbol y eventos.
+            Capturando momentos que cuentan historias.
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     FÚTBOL
+========================================= -->
+
+<!--
+    IMPORTANTE: esta sección usa 2 proyectos con "data-start" distinto
+    sobre la MISMA carpeta "futbol". Eso significa que la carpeta
+    images/futbol/ necesita 70 fotos en total, numeradas
+    futbol-1.jpg ... futbol-70.jpg (40 para MATCHDAY, 30 para TRAINING).
+    Si tenés menos de 70 fotos, algunas imágenes van a romperse.
+-->
+<section id="futbol">
+
+    <div class="category-header">
+
+        <div class="number">
+            01 / PORTFOLIO
+        </div>
+
+        <h2 class="category-title">
+            FÚTBOL
+        </h2>
+
+    </div>
+
+
+    <!-- =====================================
+         TRABAJO 1
+    ====================================== -->
+
+    <div class="project">
+
+        <div class="project-info">
+
+            <h3>
+                MATCHDAY
+            </h3>
+
+            <p>
+                Partido · Uruguay
+            </p>
+
+        </div>
+
+
+        <div
+            class="photo-grid"
+            data-folder="futbol"
+            data-prefix="futbol"
+            data-total="40"
+        >
+
+            <!-- LAS 10 CAJAS SE CREAN AUTOMÁTICAMENTE -->
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         TRABAJO 2
+    ====================================== -->
+
+    <div class="project">
+
+        <div class="project-info">
+
+            <h3>
+                TRAINING
+            </h3>
+
+            <p>
+                Entrenamiento · Club
+            </p>
+
+        </div>
+
+
+        <div
+            class="photo-grid"
+            data-folder="futbol"
+            data-prefix="futbol"
+            data-total="30"
+            data-start="41"
+        >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================================
+     EVENTOS
+========================================= -->
+
+<!--
+    IMPORTANTE: mismo caso que arriba. images/eventos/ necesita
+    60 fotos en total: evento-1.jpg ... evento-60.jpg
+    (30 para NIGHT EVENT, 30 para PARTY).
+-->
+<section id="eventos">
+
+    <div class="category-header">
+
+        <div class="number">
+            02 / PORTFOLIO
+        </div>
+
+        <h2 class="category-title">
+            EVENTOS
+        </h2>
+
+    </div>
+
+
+    <!-- =====================================
+         EVENTO 1
+    ====================================== -->
+
+    <div class="project">
+
+        <div class="project-info">
+
+            <h3>
+                NIGHT EVENT
+            </h3>
+
+            <p>
+                Evento · Uruguay
+            </p>
+
+        </div>
+
+
+        <div
+            class="photo-grid"
+            data-folder="eventos"
+            data-prefix="evento"
+            data-total="30"
+        >
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         EVENTO 2
+    ====================================== -->
+
+    <div class="project">
+
+        <div class="project-info">
+
+            <h3>
+                PARTY
+            </h3>
+
+            <p>
+                Fiesta · Evento
+            </p>
+
+        </div>
+
+
+        <div
+            class="photo-grid"
+            data-folder="eventos"
+            data-prefix="evento"
+            data-total="30"
+            data-start="31"
+        >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================================
+     SOBRE MI
+========================================= -->
+
+<section id="sobre-mi">
+
+    <div class="about">
+
+        <div class="about-image">
+
+            <img
+                src="images/fotografo.jpg"
+                alt="Tiago Stanisich, fotógrafo"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="about-text">
+
+            <div class="number">
+                03 / SOBRE MÍ
+            </div>
+
+            <h2>
+                DETRÁS<br>
+                DE LA<br>
+                CÁMARA.
+            </h2>
+
+            <p>
+                Soy fotógrafo especializado en
+                fotografía deportiva, fútbol y eventos.
+            </p>
+
+            <p>
+                Busco capturar momentos reales,
+                emociones y detalles que hagan que
+                cada fotografía tenga una historia.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACTO
+========================================= -->
+
+<section
+    class="contact"
+    id="contacto"
+>
+
+    <div class="number">
+        04 / CONTACTO
+    </div>
+
+    <h2>
+        HABLEMOS.
+    </h2>
+
+    <p>
+        ¿Querés contratar una sesión,
+        cobertura deportiva o fotografía
+        para un evento?
+    </p>
+
+    <a
+        href="https://www.instagram.com/"
+        target="_blank"
+        class="button"
+    >
+        INSTAGRAM
+    </a>
+
+</section>
+
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+>
+
+    <div
+        class="lightbox-close"
+        onclick="closeLightbox()"
+    >
+        ×
+    </div>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Fotografía ampliada"
+    >
+
+</div>
+
+
+<script>
+
+/* =========================================
+   CREAR LAS 10 CAJAS
+========================================= */
+
+document
+.querySelectorAll(".photo-grid")
+.forEach(function(grid) {
+
+
+    const folder =
+        grid.dataset.folder;
+
+
+    const prefix =
+        grid.dataset.prefix;
+
+
+    const total =
+        Number(grid.dataset.total);
+
+
+    const start =
+        Number(grid.dataset.start || 1);
+
+
+    /*
+       Cada caja empieza con una foto diferente.
+
+       Caja 1 → foto 1
+       Caja 2 → foto 2
+       Caja 3 → foto 3
+       ...
+       Caja 10 → foto 10
+    */
+
+
+    for (
+        let boxNumber = 0;
+        boxNumber < 10;
+        boxNumber++
+    ) {
+
+
+        const box =
+            document.createElement("div");
+
+
+        box.className =
+            "photo-box";
+
+
+        /* ==============================
+           IMAGEN
+        ============================== */
+
+
+        const img =
+            document.createElement("img");
+
+
+        img.loading =
+            "lazy";
+
+
+        let current =
+            boxNumber;
+
+
+        function getPhotoNumber() {
+
+            return (
+                start +
+                (
+                    current % total
+                )
+            );
+
+        }
+
+
+        function changeImage() {
+
+            img.classList.add("fade");
+
+
+            setTimeout(
+                function() {
+
+                    const number =
+                        getPhotoNumber();
+
+
+                    img.src =
+                        `images/${folder}/${prefix}-${number}.jpg`;
+
+
+                    img.alt =
+                        `${prefix} ${number}`;
+
+
+                    img.classList.remove("fade");
+
+
+                },
+                350
+            );
+
+        }
+
+
+        changeImage();
+
+
+        box.appendChild(img);
+
+
+        /* ==============================
+           FLECHA IZQUIERDA
+        ============================== */
+
+
+        const prev =
+            document.createElement("button");
+
+
+        prev.className =
+            "photo-arrow photo-prev";
+
+
+        prev.setAttribute(
+            "aria-label",
+            "Foto anterior"
+        );
+
+
+        prev.innerHTML =
+            "‹";
+
+
+        prev.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+
+                current--;
+
+
+                if (
+                    current < 0
+                ) {
+
+                    current =
+                        total - 1;
+
+                }
+
+
+                changeImage();
+
+            }
+        );
+
+
+        box.appendChild(prev);
+
+
+        /* ==============================
+           FLECHA DERECHA
+        ============================== */
+
+
+        const next =
+            document.createElement("button");
+
+
+        next.className =
+            "photo-arrow photo-next";
+
+
+        next.setAttribute(
+            "aria-label",
+            "Foto siguiente"
+        );
+
+
+        next.innerHTML =
+            "›";
+
+
+        next.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+
+                current++;
+
+
+                if (
+                    current >= total
+                ) {
+
+                    current = 0;
+
+                }
+
+
+                changeImage();
+
+            }
+        );
+
+
+        box.appendChild(next);
+
+
+        /* ==============================
+           CONTADOR
+        ============================== */
+
+
+        const counter =
+            document.createElement("div");
+
+
+        counter.className =
+            "photo-counter";
+
+
+        counter.textContent =
+            `${current + 1} / ${total}`;
+
+
+        box.appendChild(counter);
+
+
+        /* ==============================
+           ACTUALIZAR CONTADOR
+        ============================== */
+
+
+        function updateCounter() {
+
+            counter.textContent =
+                `${current + 1} / ${total}`;
+
+        }
+
+
+        /* ==============================
+           AUTO CAMBIO
+           (pausado si la caja no está
+           visible en pantalla)
+        ============================== */
+
+
+        let isVisible =
+            true;
+
+
+        const observer =
+            new IntersectionObserver(
+                function(entries) {
+
+                    isVisible =
+                        entries[0].isIntersecting;
+
+                }
+            );
+
+
+        observer.observe(box);
+
+
+        setInterval(
+            function() {
+
+                if (
+                    !isVisible
+                ) {
+
+                    return;
+
+                }
+
+
+                current++;
+
+                if (
+                    current >= total
+                ) {
+
+                    current = 0;
+
+                }
+
+
+                changeImage();
+
+                updateCounter();
+
+            },
+
+            5000 + (
+                boxNumber * 300
+            )
+
+        );
+
+
+        /* ==============================
+           CLICK FOTO
+        ============================== */
+
+
+        box.addEventListener(
+            "click",
+            function() {
+
+                openLightbox(
+                    img.src
+                );
+
+            }
+        );
+
+
+        grid.appendChild(box);
+
+    }
+
+});
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+function openLightbox(image) {
+
+    document
+    .getElementById("lightbox")
+    .classList
+    .add("active");
+
+
+    document
+    .getElementById("lightboxImage")
+    .src = image;
+
+}
+
+
+function closeLightbox() {
+
+    document
+    .getElementById("lightbox")
+    .classList
+    .remove("active");
+
+}
+
+
+document
+.getElementById("lightbox")
+.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === this
+        ) {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
